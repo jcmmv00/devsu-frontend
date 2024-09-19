@@ -1,0 +1,26 @@
+<div class="modal">
+    <div class="modal-content">
+      <h2>Transacción para la cuenta: {{ numeroDeCuenta }}</h2>
+      
+      <form [formGroup]="transactionForm">
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" id="cantidad" formControlName="cantidad" placeholder="Ingrese la cantidad" />
+  
+        <div *ngIf="transactionForm.get('cantidad')?.invalid && transactionForm.get('cantidad')?.touched" class="error">
+          <p>Cantidad es requerida y debe ser mayor a 0.</p>
+        </div>
+        <div *ngIf="errorMessageFlag" class="error">
+          <p>{{messageError}}</p>
+        </div>
+        <div *ngIf="successMessageFlag" class="success">
+          <p>{{messageSuccess}}</p>
+        </div>
+      </form>
+  
+      <div class="modal-actions">
+        <button (click)="onDepositar()">Depositar</button>
+        <button (click)="onRetirar()">Retirar</button>
+        <button (click)="onCancel()">Cancelar</button>
+      </div>
+    </div>
+  </div>

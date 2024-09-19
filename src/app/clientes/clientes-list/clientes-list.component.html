@@ -1,0 +1,32 @@
+<section class="content">
+    <h2>Listado de Clientes</h2>
+  
+    <table class="clientes-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Edad</th>
+          <th>Género</th>
+          <th>Identificación</th>
+          <th>Dirección</th>
+          <th>Teléfono</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cliente of clientes">
+          <td>{{ cliente.personId }}</td>
+          <td>{{ cliente.name }}</td>
+          <td>{{ cliente.lastName }}</td>
+          <td>{{ cliente.age }}</td>
+          <td>{{ cliente.gender }}</td>
+          <td>{{ cliente.identification }}</td>
+          <td>{{ cliente.address }}</td>
+          <td>{{ cliente.telephone }}</td>
+          <td>{{ cliente.state ? 'Activo' : 'Inactivo' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>

@@ -1,4 +1,32 @@
 <section class="content">
-    <h2>Movimientos</h2>
-    <p>Visualización de los movimientos bancarios.</p>
-  </section>
+  <h2>Movimientos</h2>
+  <p>Visualización de los movimientos bancarios.</p>
+</section>
+
+<section class="content">
+  <h2>Listado de Movimientos</h2>
+
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+
+  <table class="movimientos-table" *ngIf="!errorMessage">
+    <thead>
+      <tr>
+        <th>Cantidad</th>
+        <th>Tipo de Movimiento</th>
+        <th>Número de Cuenta</th>
+        <th>Fecha</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let movimiento of movimientos">
+        <td>{{ movimiento.quantity | currency }}</td>
+        <td>{{ movimiento.movementType }}</td>
+        <td>{{ movimiento.account }}</td>
+        <td>{{ movimiento.date | date:'dd/MM/yyyy HH:mm:ss' }}</td>
+        
+      </tr>
+    </tbody>
+  </table>
+  
+</section>

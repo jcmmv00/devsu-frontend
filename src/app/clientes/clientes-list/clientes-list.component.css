@@ -3,26 +3,26 @@
     overflow: auto;
   }
   
-  .movimientos-table {
+  .clientes-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 1rem;
   }
   
-  .movimientos-table th, .movimientos-table td {
+  .clientes-table th, .clientes-table td {
     border: 1px solid #ddd;
     padding: 0.75rem;
     text-align: left;
   }
   
-  .movimientos-table th {
+  .clientes-table th {
     background-color: #f2f2f2;
   }
   
-  .movimientos-table tr:nth-child(even) {
+  .clientes-table tr:nth-child(even) {
     background-color: #f9f9f9;
   }
   
-  .movimientos-table tr:hover {
+  .clientes-table tr:hover {
     background-color: #f1f1f1;
   }

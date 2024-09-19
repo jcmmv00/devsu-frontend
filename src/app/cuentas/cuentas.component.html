@@ -2,3 +2,34 @@
     <h2>Cuentas</h2>
     <p>Administración de las cuentas bancarias.</p>
   </section>
+
+  <section class="content">
+    <h2>Listado de Cuentas</h2>
+  
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  
+    <table class="cuentas-table" *ngIf="!errorMessage">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Número de Cuenta</th>
+          <th>Tipo de Cuenta</th>
+          <th>Balance</th>
+          <th>Estado</th>
+          <th>Opción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cuenta of cuentas">
+          <td>{{ cuenta.accountId }}</td>
+          <td>{{ cuenta.accountNumber }}</td>
+          <td>{{ cuenta.accountType }}</td>
+          <td>{{ cuenta.balance | currency }}</td>
+          <td>{{ cuenta.state ? 'Activa' : 'Inactiva' }}</td>
+          <td><button (click)="openModal(cuenta.accountNumber)">Movimiento</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <app-transaction-modal *ngIf="showModal" [numeroDeCuenta]="numeroDeCuenta" (close)="closeModal()">
+    </app-transaction-modal>
+  </section>
