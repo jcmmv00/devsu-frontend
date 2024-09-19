@@ -1,1 +1,95 @@
-/* You can add global styles to this file, and also import other style files */
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* App Container */
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  /* Header */
+  .header {
+    background-color: #ffffff;
+    color: black;
+    padding: 1rem;
+    text-align: left;
+  }
+  
+  /* Body Layout */
+  .app-body {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+  }
+  
+  /* Side Menu */
+  .side-menu {
+    width: 250px;
+    color: rgb(0, 0, 0);
+    padding: 1rem;
+  }
+  
+  .side-menu ul {
+    list-style-type: none;
+    
+  }
+  
+  .side-menu ul li {
+    margin: 1rem 0;
+    border-bottom: 1px rgb(180, 180, 180) solid;
+  }
+  
+  .side-menu ul li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+  }
+  
+  .side-menu ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Content Area */
+  .content {
+    flex: 1;
+    padding: 2rem;
+    background-color: #f4f4f4;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .app-body {
+      flex-direction: column;
+    }
+  
+    .side-menu {
+      width: 100%;
+      text-align: center;
+      padding: 0.5rem;
+    }
+  
+    .side-menu ul {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .header {
+      font-size: 1.2rem;
+    }
+  
+    .side-menu ul {
+      flex-direction: column;
+    }
+  
+    .side-menu ul li {
+      margin: 0.5rem 0;
+    }
+  }
+  
